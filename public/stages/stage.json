@@ -1,0 +1,161 @@
+{ "assets" : [
+    { "name": "boxTexture", 
+      "type": "StandartMaterial",
+      "properties": [
+        { "name": "diffuseTexture", "value":"textures/box-texture.png"}    
+      ]
+    },
+    { "name": "groundTexture",
+      "type": "StandartMaterial",
+      "properties": [
+        { "name":"diffuseTexture", "value":"textures/ground-diffuse.png"},
+        { "name":"specularTexture", "value":"textures/ground-specular.png"},
+        { "name":"bumpTexture", "value":"textures/ground-bump.png"}
+      ]
+    },
+    { "name": "wallTexture",
+        "type": "StandartMaterial",
+        "properties": [
+          { "name":"diffuseTexture", "value":"textures/wall-diffuse.jpg"},
+          { "name":"specularTexture", "value":"textures/wall-specular.jpg"},
+          { "name":"bumpTexture", "value":"textures/wall-bump.jpg"}
+        ]
+    },
+    { "name": "skybox",
+      "type": "CubeTexture",
+      "value": "textures/skybox.dds"
+    }
+],
+  "objects" : [
+      { "name":"baseGround",
+        "type":"CreateGround",
+        "options": {
+            "height": 24,
+            "width": 24,
+            "subdivision": 2
+        },
+        "properties":[
+            {
+                "name":"checkCollisions",
+                "value":true
+            },
+            {
+                "name":"material",
+                "value":"groundTexture"
+            },
+            {
+                "name":"receiveShadows",
+                "value":true
+            }
+        ]
+      },
+      { "name":"wallBack",
+        "type":"CreateBox",
+        "options": {
+            "height": 20,
+            "width": 24,
+            "depth": 1
+        },
+        "properties":[
+            {
+                "name":"position",
+                "value": {
+                    "x":0,
+                    "y":10,
+                    "z":-12.5
+                }
+            },
+            {
+                "name":"checkCollisions",
+                "value":true
+            },
+            {
+                "name":"material",
+                "value":"wallTexture"
+            }
+        ]
+      },
+      { "name":"wallLeft",
+        "type":"CreateBox",
+        "options": {
+            "height": 20,
+            "width": 1,
+            "depth": 24
+        },
+        "properties":[
+            {
+                "name":"position",
+                "value": {
+                    "x":12.5,
+                    "y":10,
+                    "z":0
+                }
+            },
+            {
+                "name":"checkCollisions",
+                "value":true
+            },
+            {
+                "name":"material",
+                "value":"wallTexture"
+            }
+        ]
+      },
+      { "name":"wallRight",
+        "type":"CreateBox",
+        "options": {
+            "height": 20,
+            "width": 1,
+            "depth": 24
+        },
+        "properties":[
+            {
+                "name":"position",
+                "value": {
+                    "x":-12.5,
+                    "y":10,
+                    "z":0
+                }
+            },
+            {
+                "name":"checkCollisions",
+                "value":true
+            },
+            {
+                "name":"material",
+                "value":"wallTexture"
+            }
+        ]
+      },
+      { "name":"wallFront",
+        "type":"CreateBox",
+        "options": {
+            "height": 20,
+            "width": 24,
+            "depth": 1
+        },
+        "properties":[
+            {
+                "name":"position",
+                "value": {
+                    "x":0,
+                    "y":10,
+                    "z":12.5
+                }
+            },
+            {
+                "name":"checkCollisions",
+                "value":true
+            },
+            {
+                "name":"material",
+                "value":"wallTexture"
+            },
+            {
+                "name":"isVisible",
+                "value":false
+            }
+        ]
+      }
+  ] 
+}

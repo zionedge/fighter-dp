@@ -1,0 +1,24 @@
+{
+    "models":[],
+    "images":[],
+    "sounds":[{
+        "name":"announcerOne",
+        "url":"sounds/1.ogg",
+        "options":{}
+        },{
+        "name":"announcerTwo",
+        "url":"sounds/2.ogg",
+        "options":{}
+        },{
+        "name":"announcerRound",
+        "url":"sounds/round.ogg",
+        "options":{}
+        },{
+        "name":"menuTheme",
+        "url":"sounds/menuTheme.mp3",
+        "options":{
+            "loop":true
+            }
+        }
+    ]
+}
